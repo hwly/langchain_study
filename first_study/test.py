@@ -53,7 +53,7 @@ for chunk in llm.stream("请介绍Python"):
 
 print('================================================')
 
-# 使用PromptTemplate
+# 使用PromptTemplate（提示词模板）
 ## 结合PromptTemplate动态生成Prompt
 from langchain_core.prompts import ChatPromptTemplate
 
@@ -61,6 +61,7 @@ prompt =  ChatPromptTemplate.from_template(
     "请详细解释：{topic}"
 )
 
+# | 管道符
 chain = prompt | llm_pro
 
 resp_prom = chain.invoke({
